@@ -4,11 +4,28 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Globe, Clock, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { Variants } from "framer-motion";
 
-// ── Animation helpers ──
-const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } } };
-const stagger = { visible: { transition: { staggerChildren: 0.1 } } };
 
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: "easeOut",
+    },
+  },
+};
+
+const stagger: Variants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 // ── Social icons ──
 const socials = [
   { label: "Facebook", href: "https://www.facebook.com/profile.php?id=100086646240938", color: "#1877F2", svg: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /> },
@@ -164,14 +181,25 @@ export default function ContactPage() {
             <motion.div variants={fadeUp} className="mt-8">
               <p className="text-sm font-bold mb-3">Follow Us <span className="text-gray-400 font-medium ml-1">• #trainwithsec</span></p>
               <div className="flex flex-wrap gap-2">
-                {socials.map(({ href, label, color, path }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                    className="px-3 py-2 rounded-lg text-white text-[12px] font-bold flex items-center gap-1.5 hover:opacity-90 transition"
-                    style={{ background: color }}>
-                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4"><path d={path} /></svg>
-                    {label}
-                  </a>
-                ))}
+                {socials.map(({ href, label, color, svg }) => (
+  <a
+    key={label}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="px-3 py-2 rounded-lg text-white text-[12px] font-bold flex items-center gap-1.5 hover:opacity-90 transition"
+    style={{ background: color }}
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="w-4 h-4"
+    >
+      {svg}
+    </svg>
+    {label}
+  </a>
+))}
               </div>
             </motion.div>
           </motion.div>
