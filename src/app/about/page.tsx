@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const stats = [
   { n: "40+", label: "Courses" },
@@ -7,17 +8,21 @@ const stats = [
 ];
 
 const values = [
-  { title: "Innovation", desc: "We embrace cutting-edge technology to deliver creative and forward-thinking ICT solutions that prepare students for tomorrow's challenges.", color: "#0e7c5a" },
-  { title: "Empowerment", desc: "We equip individuals and organizations with skills and tools for lasting success in the ever-evolving ICT landscape.", color: "#e74c3c" },
-  { title: "Excellence", desc: "We strive for the highest standards in training quality, customer service, and student outcomes — evidenced by our 96% first-attempt pass rate.", color: "#0e7c5a" },
-  { title: "Adaptability", desc: "Flexible, practical solutions tailored to the evolving needs of the IT industry. Weekend, weekday, online, and in-person options.", color: "#0e7c5a" },
+  { title: "Innovation", desc: "We embrace cutting-edge technology to deliver creative and forward-thinking ICT solutions that prepare students for tomorrow's challenges.", color: "#0e7c5a", img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=75" },
+  { title: "Empowerment", desc: "We equip individuals and organizations with skills and tools for lasting success in the ever-evolving ICT landscape.", color: "#e74c3c", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=75" },
+  { title: "Excellence", desc: "We strive for the highest standards in training quality, customer service, and student outcomes — evidenced by our 96% first-attempt pass rate.", color: "#0e7c5a", img: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=75" },
+  { title: "Adaptability", desc: "Flexible, practical solutions tailored to the evolving needs of the IT industry. Weekend, weekday, online, and in-person options.", color: "#0e7c5a", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=75" },
 ];
 
 const team = [
   { name: "Aliyu Azeez Omotayo", role: "CEO & Principal Consultant", certs: "CCIE R&S · MCSE · 150+ Certifications", bio: "25+ years in networking and security across Nigeria, South Africa, France, and the USA. Degrees in Mathematics and Information Networks from the USA. Member of CPN and Accredited Management Trainer (CMD).", initials: "AAO", color: "#0e7c5a" },
-  { name: "Ogundeji O. Bukunmi", role: "Chief Operating Officer", certs: "CCNP · Cisco ASA · Firepower", bio: "Expert in designing and securing enterprise network infrastructures. Proficient in Cisco ASA, Firepower, Catalyst switches, ISR routers, VPNs, and cloud integration across AWS and Azure.", initials: "OOB", color: "#134d33" },
+  { name: "Ogundeji Olubukunmi", role: "Chief Operating Officer", certs: "CCNP · Cisco ASA · Firepower", bio: "Expert in designing and securing enterprise network infrastructures. Proficient in Cisco ASA, Firepower, Catalyst switches, ISR routers, VPNs, and cloud integration across AWS and Azure.", initials: "OOB", color: "#134d33" },
   { name: "Akinyemi Adebayo", role: "Chief Technical Officer", certs: "CCNP · MEng Electrical Engineering", bio: "Telecom engineer with 20+ years in designing, installing, and maintaining telecommunication and computer networks. Involved in National and World Bank-assisted projects as System Integrator and Project Manager.", initials: "AA", color: "#095e42" },
   { name: "Ayo-Famola Ayodeji", role: "Business Development Manager", certs: "MBA (UniLorin) · ACCA Affiliate", bio: "MBA with specialization in marketing & HR from University of Ilorin. 10+ years growing SMEs through business promotion and marketing. ACCA affiliate member currently heading business development.", initials: "AFA", color: "#1a9470" },
+  {name: "Adedeji Aisha", role: "Instructor", certs: "CCNP Security · CEH · AWS Security", bio: "Cybersecurity instructor specializing in network security, ethical hacking, and cloud security. Experienced in delivering engaging training sessions and hands-on labs to help students master complex security concepts.", initials: "AA", color: "#0e7c5a" },
+  {name: "Bello AbdulRasheed", role: "COO Investment" , certs: "MBA (UniLorin) · ACCA Affiliate", bio: "MBA with specialization in marketing & HR from University of Ilorin. 10+ years growing SMEs through business promotion and marketing. ACCA affiliate member currently heading business development.", initials: "BA", color: "#134d33" },
+  {name: "Aliyu Shakiru", role: "Instructor", certs: "CCNP Enterprise · AWS Solutions Architect", bio: "Network and cloud instructor with expertise in Cisco enterprise technologies and AWS cloud solutions. Passionate about helping students build practical skills for modern IT careers through hands-on labs and real-world scenarios.", initials: "AS", color: "#0e7c5a" },
+  {name: "AbdulRasaq Fadlulah", role: "Instructor", certs: "CCNP Security · CompTIA CySA+", bio: "Cybersecurity instructor specializing in threat detection, incident response, and security operations. Experienced in delivering engaging training sessions and hands-on labs to help students master complex security concepts.", initials: "AF", color: "#0e7c5a" },
 ];
 
 const certifications = [
@@ -107,9 +112,14 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v) => (
               <div key={v.title} className="border border-[#e5e7eb] rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all">
-                <div className="h-[160px] bg-[#f3f4f6] flex items-center justify-center border-b border-[#e5e7eb]">
-                  <div className="w-16 h-16 rounded-full bg-[#e5e7eb] border-2 border-dashed border-[#d1d5db] flex items-center justify-center text-[#9ca3af] text-xs font-mono uppercase tracking-wider">Image</div>
-                </div>
+               <div className="relative h-[160px] overflow-hidden border-b border-[#e5e7eb]">
+  <Image
+    src={v.img}
+    alt={v.title}
+    fill
+    className="object-cover"
+  />
+</div>
                 <div className="p-5">
                   <div className="w-1 h-5 rounded mb-3" style={{ background: v.color }} />
                   <h3 className="font-bold text-[#0a2e1f] text-[15px] mb-2">{v.title}</h3>

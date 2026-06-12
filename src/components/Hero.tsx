@@ -10,7 +10,7 @@ const slides = [
   { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.44.58_AM_urw4wv.jpg", caption: "Penetration Testing & Red Team" },
   { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.45.38_AM_ndhqwi.jpg", caption: "SD-WAN & Cloud Networking" },
   { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.44.41_AM_nuxvpr.jpg", caption: "SOC & Threat Intelligence" },
-  { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.45.38_AM_ndhqwi.jpgs://images.unsplash.com/photo-1629654297299-c8506221ca97?w=1400&q=80", caption: "Linux & Server Administration" },
+  { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.45.38_AM_ndhqwi.jpg", caption: "Linux & Server Administration" },
 ];
 
 const pills = ["CCNA & CCNP", "Cybersecurity", "Penetration Testing", "Cloud Security", "Server Administration"];
