@@ -128,7 +128,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => handleNavClick(e, link.scrollTo)}
+              onClick={(e) => {
+                handleNavClick(e, link.scrollTo);
+                setOpen(false); // Close the mobile drawer on link click
+              }}
               className={`py-3 text-sm font-medium no-underline border-b border-white/10 transition-colors text-sea-green-hover font-sora-custom ${
                 isActive(link.href)
                   ? "text-sea-green border-sea-green"
