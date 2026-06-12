@@ -121,7 +121,7 @@ export default function Hero() {
           — Cisco Authorized Training Partner · Ilorin, Nigeria —
         </p>
 
-        <h1 className="text-center text-[clamp(1.8rem,5vw,4.2rem)] text-white font-extrabold leading-[1.15] tracking-tight max-w-[850px] mb-6">
+        <h1 className="text-center text-[clamp(1.8rem,5vw,4.2rem)] text-white font-semibold leading-[1.15] tracking-tight max-w-[850px] mb-6">
           Enterprise Core<br className="hidden sm:block" />{" "}
           <span className="text-sea-green font-sora-custom">Networking</span>,<br className="hidden sm:block" />{" "}
           Cybersecurity Training &<br className="hidden sm:block" />{" "}
