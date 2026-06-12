@@ -169,7 +169,7 @@ export default function Hero() {
 
         {/* Certified & Trusted By Marquee */}
         <div className="w-full mt-16 pt-8 border-t border-white/05 overflow-hidden relative">
-          <p className="font-mono text-[9px] uppercase tracking-[3px] text-sea-green/80 mb-6 text-center">
+          <p className="font-mono text-[9px] uppercase tracking-[3px] text-gray-300 mb-6 text-center">
             Certified & Trusted By
           </p>
           <div className="relative w-full flex items-center overflow-hidden">
