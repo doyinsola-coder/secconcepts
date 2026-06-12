@@ -118,7 +118,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/enroll"
+            href="/contact"
             onClick={() => setOpen(false)}
             className="mt-3 inline-flex w-full justify-center bg-[#0e7c5a] text-white text-sm font-bold px-5 py-3 rounded-lg no-underline hover:bg-[#095e42] transition-colors"
           >
