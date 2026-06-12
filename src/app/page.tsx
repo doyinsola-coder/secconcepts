@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <TrustBand />
       <CoursesSection />
       <WhyUs />
       <Instructors />

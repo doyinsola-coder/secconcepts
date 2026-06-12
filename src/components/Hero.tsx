@@ -2,6 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Sora } from "next/font/google";
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 const slides = [
   { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.45.56_AM_kakdik.jpg", caption: "Enterprise Network Infrastructure" },
@@ -22,6 +28,10 @@ const stats = [
   { value: "2.4K+", label: "Students Trained" },
 ];
 
+const brands = [
+  "EC-Council", "Certiport", "MTN Nigeria", "First Bank", "Cisco Systems", "CompTIA"
+];
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
@@ -32,8 +42,34 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
+  function formatStatValue(val: string) {
+    const numPart = val.match(/[\d\.]+[K]?/)?.[0] || "";
+    const symbolPart = val.replace(numPart, "");
+    return (
+      <>
+        {numPart}
+        <span className="text-[#FF073A]">{symbolPart}</span>
+      </>
+    );
+  }
+
   return (
-    <section className="relative min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden text-center px-[5%] py-24">
+    <section className={`${sora.className} relative min-h-[calc(100vh-72px)] flex items-center justify-center overflow-hidden text-center px-[5%] py-24 bg-black`}>
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .marquee-container {
+          display: flex;
+          width: max-content;
+          animation: marquee 25s linear infinite;
+        }
+        .marquee-container:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+
       {/* Slideshow background */}
       {slides.map((slide, i) => (
         <div
@@ -41,13 +77,25 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
           style={{
             backgroundImage: `url(${slide.src})`,
-            opacity: i === current ? 1 : 0,
+            opacity: i === current ? 0.25 : 0,
           }}
         />
       ))}
 
+      {/* Grid Pattern Overlay */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.06] z-[1]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, white 1px, transparent 1px),
+            linear-gradient(to bottom, white 1px, transparent 1px)
+          `,
+          backgroundSize: '45px 45px',
+        }}
+      />
+
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Slide dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -55,37 +103,31 @@ export default function Hero() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-[3px] rounded-full transition-all duration-300 ${i === current ? "w-6 bg-[#0e7c5a]" : "w-3 bg-white/40"}`}
+            className={`h-[3px] rounded-full transition-all duration-300 ${i === current ? "w-6 bg-[#20B2AA]" : "w-3 bg-white/40"}`}
           />
         ))}
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[960px] mx-auto flex flex-col items-center">
-        <p className="font-mono text-[10px] tracking-[3px] uppercase text-white/40 mb-8">
+        <p className="font-mono text-[9px] tracking-[3px] uppercase text-[#20B2AA] mb-8">
           — Cisco Authorized Training Partner · Ilorin, Nigeria —
         </p>
 
-        <h1
-    className="text-center text-[clamp(2.2rem,5vw,4rem)] text-white tracking-wide font-extrabold leading-[0.9] tracking-[-0.05em]"
-    style={{ fontFamily: "var(--font-sora)" }}
-  >
-          Enterprise{" "}
-          <span className="text-[#0e7c5a] border-b-2 border-[#0e7c5a]">Core Networking</span>,
-          <br />
-          Cybersecurity{" "}
-          <span className="text-[#e74c3c]">Training</span> & Solution Company.
+        <h1 className="text-center text-[clamp(2.2rem,5vw,4.2rem)] text-white font-extrabold leading-[1.05] tracking-tight max-w-[850px] mb-6">
+          Enterprise Core<br />
+          <span className="text-[#20B2AA]">Networking</span>,<br />
+          Cybersecurity Training &<br />
+          <span className="text-[#FF073A]">Solution</span> Company.
         </h1>
 
-        <div className="w-16 h-[2px] bg-gradient-to-r from-[#0e7c5a] to-[#e74c3c] rounded my-6" />
-
-        <p className="font-mono text-[clamp(.72rem,1.1vw,.88rem)] text-white/40 tracking-[3px] uppercase max-w-[700px] mb-10 leading-loose">
-          We are a team of talented professionals with a lot of expertise in networking and security solutions
+        <p className="text-[clamp(.9rem,1.2vw,1.1rem)] text-white/70 max-w-[650px] mb-10 leading-relaxed">
+          We are a team of talented professionals with a lot of expertise in networking and security solutions.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {pills.map((pill) => (
-            <span key={pill} className="font-mono text-[10px] tracking-[1.2px] uppercase px-4 py-1.5 rounded-full border border-[#0e7c5a]/40 text-white/55 bg-[#0e7c5a]/07">
+            <span key={pill} className="font-mono text-[10px] tracking-[1.2px] uppercase px-4 py-2 rounded-full border border-[#20B2AA]/30 text-[#20B2AA] bg-[#20B2AA]/10">
               {pill}
             </span>
           ))}
@@ -94,27 +136,52 @@ export default function Hero() {
         <div className="flex flex-wrap justify-center gap-5">
           <Link
             href="/about"
-            className="min-w-[210px] text-center bg-gradient-to-br from-[#0e7c5a] to-[#095e42] text-white font-bold text-[15px] px-9 py-4 rounded-lg shadow-[0_4px_28px_rgba(14,124,90,.35)] hover:-translate-y-0.5 transition-transform"
+            className="min-w-[210px] text-center bg-[#20B2AA] text-white font-bold text-[14px] px-8 py-4 rounded-lg shadow-[0_4px_20px_rgba(32,178,170,0.3)] hover:-translate-y-0.5 hover:shadow-[0_4px_25px_rgba(32,178,170,0.5)] transition-all duration-300"
           >
-            Learn More About<br />Sec-Concepts Networks
+            Learn More About Sec-Concepts
           </Link>
           <Link
             href="/programs"
-            className="min-w-[210px] text-center bg-gradient-to-br from-[#e74c3c] to-[#c0392b] text-white font-bold text-[15px] px-9 py-4 rounded-lg shadow-[0_4px_28px_rgba(231,76,60,.3)] hover:-translate-y-0.5 transition-transform"
+            className="min-w-[210px] text-center bg-transparent border border-white text-white font-bold text-[14px] px-8 py-4 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
           >
-            Learn More About<br />Training
+            Learn More About Training
           </Link>
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center w-full mt-16 pt-10 border-t border-white/07">
+        <div className="flex flex-wrap justify-center w-full mt-16 pt-10 border-t border-white/05">
           {stats.map((stat, i) => (
-            <div key={i} className="flex-1 min-w-[130px] px-6 py-2 border-r border-white/07 last:border-r-0 text-center">
-              <div className="font-extrabold text-[2rem] text-white tracking-[-1px]">{stat.value}</div>
+            <div key={i} className="flex-1 min-w-[130px] px-6 py-2 border-r border-white/05 last:border-r-0 text-center">
+              <div className="font-extrabold text-[2.2rem] text-white tracking-tight">
+                {formatStatValue(stat.value)}
+              </div>
               <div className="font-mono text-[10px] uppercase tracking-[1.2px] text-white/40 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
+
+        {/* Certified & Trusted By Marquee */}
+        <div className="w-full mt-16 pt-8 border-t border-white/05 overflow-hidden relative">
+          <p className="font-mono text-[9px] uppercase tracking-[3px] text-[#20B2AA]/80 mb-6 text-center">
+            Certified & Trusted By
+          </p>
+          <div className="relative w-full flex items-center overflow-hidden">
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+            
+            <div className="marquee-container flex items-center gap-12 py-2">
+              {[...brands, ...brands, ...brands].map((brand, idx) => (
+                <div key={idx} className="flex items-center gap-12 shrink-0">
+                  <span className="font-semibold text-white/60 tracking-wider text-xs md:text-sm">
+                    {brand}
+                  </span>
+                  <span className="w-1.5 h-1.5 bg-[#FF073A] rounded-full shrink-0" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

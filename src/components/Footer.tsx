@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +30,20 @@ const connect = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#071a10] px-[5%] pt-16 pb-8">
+    <footer className="font-sora-custom bg-black border-t border-white/10 px-[5%] pt-16 pb-8">
+      <style dangerouslySetInnerHTML={{__html: `
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');
+        .font-sora-custom {
+          font-family: 'Sora', sans-serif !important;
+        }
+        .text-sea-green { color: #20B2AA !important; }
+        .bg-sea-green { background-color: #20B2AA !important; }
+        .border-sea-green { border-color: #20B2AA !important; }
+        .text-neon-red { color: #FF073A !important; }
+        .bg-neon-red { background-color: #FF073A !important; }
+        .border-neon-red { border-color: #FF073A !important; }
+      `}} />
+
       <div className="max-w-[1200px] mx-auto">
 
         {/* Top grid */}
@@ -36,24 +51,45 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="flex flex-col gap-6">
-           <Image src="/logo.png" alt="Sec Concept Networks" width={160} height={80} className="object-contain object-left brightness-125" />
-            <div className="flex flex-col gap-2">
-              <a href="tel:+2348039134906" className="flex items-center gap-2 text-white/50 text-[13px] hover:text-white transition-colors no-underline">
-                <span className="text-[#e74c3c]">📞</span> +234 8039 134 906
+            <div className="flex items-center gap-3 no-underline min-w-0">
+              <Image
+                src="/logo.png"
+                alt="logo"
+                width={56}
+                height={56}
+                className="w-14 h-14 object-contain"
+              />
+              <div className="min-w-0">
+                <p className="truncate text-base font-extrabold text-white">
+                  Sec Concept <span className="text-white">Networks</span>
+                </p>
+                <p className="truncate text-[9px] text-sea-green font-bold tracking-wider mt-0.5 uppercase">
+                  Networking · Cybersecurity · Cloud
+                </p>
+              </div>
+            </div>
+
+            <p className="text-white/60 text-[13px] leading-relaxed max-w-[320px]">
+              Cisco Authorized Training Partner delivering exam-mapped networking and cybersecurity training in Ilorin, Nigeria.
+            </p>
+
+            <div className="flex flex-col gap-2.5">
+              <a href="tel:+2348039134906" className="flex items-center gap-2 text-white/60 text-[13px] hover:text-white transition-colors no-underline">
+                <span className="text-neon-red">📞</span> +234 8039 134 906
               </a>
-              <a href="mailto:info@trainwithsec.com" className="flex items-center gap-2 text-white/50 text-[13px] hover:text-white transition-colors no-underline">
-                <span>✉</span> info@trainwithsec.com
+              <a href="mailto:info@trainwithsec.com" className="flex items-center gap-2 text-white/60 text-[13px] hover:text-white transition-colors no-underline">
+                <span className="text-sea-green">✉</span> info@trainwithsec.com
               </a>
             </div>
           </div>
 
           {/* Courses */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[2px] text-white font-bold mb-5">Courses</h4>
-            <ul className="flex flex-col gap-3">
+            <h4 className="font-mono text-[10px] uppercase tracking-[2.5px] text-sea-green font-bold mb-6">Courses</h4>
+            <ul className="flex flex-col gap-3 list-none p-0 m-0">
               {courses.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-white/45 text-[13px] hover:text-white transition-colors no-underline">
+                  <Link href={link.href} className="text-white/60 text-[13px] hover:text-white transition-colors no-underline font-sora-custom">
                     {link.label}
                   </Link>
                 </li>
@@ -63,15 +99,15 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[2px] text-white font-bold mb-5">Company</h4>
-            <ul className="flex flex-col gap-3">
+            <h4 className="font-mono text-[10px] uppercase tracking-[2.5px] text-sea-green font-bold mb-6">Company</h4>
+            <ul className="flex flex-col gap-3 list-none p-0 m-0">
               {company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-white/45 text-[13px] hover:text-white transition-colors no-underline"
+                    className="text-white/60 text-[13px] hover:text-white transition-colors no-underline font-sora-custom"
                   >
                     {link.label}
                   </Link>
@@ -82,15 +118,15 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <h4 className="font-mono text-[11px] uppercase tracking-[2px] text-white font-bold mb-5">Connect</h4>
-            <ul className="flex flex-col gap-3">
+            <h4 className="font-mono text-[10px] uppercase tracking-[2.5px] text-sea-green font-bold mb-6">Connect</h4>
+            <ul className="flex flex-col gap-3 list-none p-0 m-0">
               {connect.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-white/45 text-[13px] hover:text-white transition-colors no-underline"
+                    className="text-white/60 text-[13px] hover:text-white transition-colors no-underline font-sora-custom"
                   >
                     {link.label}
                   </Link>
@@ -104,9 +140,12 @@ export default function Footer() {
         <div className="h-px bg-white/10 mb-6" />
 
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-white/30 text-[12px] font-mono">
-          <span>© 2026 Sec Concept Networks. All rights reserved.</span>
-          <span>Cisco®, CCNA®, CCNP®, CCIE® are trademarks of Cisco Systems, Inc.</span>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-white/40 text-[11px] font-mono">
+          <span className="flex items-center gap-1.5 font-sora-custom">
+            © 2026 Sec Concept Networks. All rights reserved.
+            <span className="text-neon-red font-bold text-sm select-none">•</span>
+          </span>
+          <span className="font-sora-custom">Cisco®, CCNA®, CCNP®, CCIE® are trademarks of Cisco Systems, Inc.</span>
         </div>
 
       </div>

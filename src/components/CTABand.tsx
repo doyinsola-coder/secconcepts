@@ -1,37 +1,46 @@
+"use client";
+
 import Link from "next/link";
+import { Sora } from "next/font/google";
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export default function CTABand() {
   return (
-    <section className="py-20 px-[5%] bg-gradient-to-br from-[#e74c3c] to-[#c0392b] text-center relative overflow-hidden">
-      {/* Background text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-        <span className="font-mono text-[8rem] font-black text-white/5 uppercase tracking-widest whitespace-nowrap">
-          ICT Career
-        </span>
-      </div>
+    <section className={`${sora.className} py-20 px-[5%] bg-[#20B2AA] text-center relative overflow-hidden`}>
+      {/* Grid Pattern Overlay */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-[0.08] z-[1]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, white 1px, transparent 1px),
+            linear-gradient(to bottom, white 1px, transparent 1px)
+          `,
+          backgroundSize: '45px 45px',
+        }}
+      />
 
-      <div className="relative z-10 max-w-[640px] mx-auto">
-        <p className="font-mono text-[10px] uppercase tracking-[3px] text-white/50 mb-6">
-          Limited Seats Per Cohort
-        </p>
-        <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold text-white leading-tight tracking-[-1px] mb-5">
-          Take the Next Step in<br />
-          Your <span className="text-white/20">ICT Career</span> Today
+      <div className="relative z-10 max-w-[700px] mx-auto flex flex-col items-center">
+        <h2 className="text-[clamp(2rem,4.5vw,2.8rem)] font-extrabold text-white leading-tight tracking-tight mb-5">
+          Ready to Write Your Success<br />Story?
         </h2>
-        <p className="text-white/75 text-[15px] leading-relaxed mb-8">
-          Join 2,400+ certified professionals who trained with Sec Concept Networks.
-          Expert-led, hands-on, and aligned to the latest Cisco, CompTIA, and EC-Council exam blueprints.
+        <p className="text-white/95 text-[15px] leading-relaxed max-w-[550px] mb-8">
+          Join thousands of certified professionals. Expert-led, hands-on training
+          aligned to Cisco, CompTIA, and EC-Council blueprints.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/enroll"
-            className="bg-white/15 hover:bg-white/25 text-white font-bold text-[14px] px-7 py-3.5 rounded-lg border border-white/20 transition-all"
+            className="bg-[#FF073A] text-white font-bold text-[14px] px-8 py-4 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300"
           >
-            → Enroll Now — July 2026 Cohort
+            &rarr; Enroll Now — July 2026 Cohort
           </Link>
           <Link
             href="/#courses"
-            className="bg-white text-[#c0392b] font-bold text-[14px] px-7 py-3.5 rounded-lg hover:bg-white/90 transition-all"
+            className="bg-transparent border border-white text-white font-bold text-[14px] px-8 py-4 rounded-lg hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300"
           >
             Browse All Courses
           </Link>
