@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import TrustBand from "@/components/TrustBand";
 import CoursesSection from "@/components/CoursesSection";
 import WhyUs from "@/components/WhyUs";
 import Instructors from "@/components/Instructors";
