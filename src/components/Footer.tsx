@@ -12,7 +12,7 @@ const courses = [
 
 const company = [
   { label: "About Us", href: "/about" },
-  { label: "Instructors", href: "/team" },
+  { label: "Instructors", href: "/about#team" },
   { label: "Student Reviews", href: "/#reviews" },
   { label: "Contact Us", href: "/contact" },
   { label: "Live Website ↗", href: "https://trainwithsec.com", external: true },
@@ -20,7 +20,7 @@ const company = [
 
 const connect = [
   { label: "LinkedIn", href: "https://linkedin.com", external: true },
-  { label: "Twitter / X", href: "https://x.com", external: true },
+  { label: "Twitter / X", href: "https://x.com/aliyuthayo", external: true },
   { label: "YouTube", href: "https://youtube.com", external: true },
   { label: "WhatsApp Group", href: "https://wa.me/2348039134906", external: true },
   { label: "Newsletter", href: "/contact" },

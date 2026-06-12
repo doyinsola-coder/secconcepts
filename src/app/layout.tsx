@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, Space_Grotesk } from "next/font/google";
+import { Sora, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -16,6 +16,12 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
   title: "Sec Concept Networks — Cisco & Cybersecurity Training",
   description: "Professional Networking, Cybersecurity, and Cloud Security training.",
@@ -28,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className={`${sora.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
         <Navbar />
         {children}
         <Footer />

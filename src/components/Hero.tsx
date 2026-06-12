@@ -66,7 +66,10 @@ export default function Hero() {
           — Cisco Authorized Training Partner · Ilorin, Nigeria —
         </p>
 
-        <h1 className="text-[clamp(2.2rem,5vw,4rem)] font-extrabold text-white leading-[1.08] tracking-[-2px] mb-4">
+        <h1
+    className="text-center text-[clamp(2.2rem,5vw,4rem)] text-white tracking-wide font-extrabold leading-[0.9] tracking-[-0.05em]"
+    style={{ fontFamily: "var(--font-sora)" }}
+  >
           Enterprise{" "}
           <span className="text-[#0e7c5a] border-b-2 border-[#0e7c5a]">Core Networking</span>,
           <br />
