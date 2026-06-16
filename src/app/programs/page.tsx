@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 const stats = [
-  { n: "6", label: "Programs Available" },
+  { n: "7", label: "Programs Available" },
   { n: "4–8", label: "Months Duration", accent: true },
   { n: "150+", label: "Certifications Offered" },
   { n: "25+", label: "Years Experience", accent: true },
@@ -24,7 +24,7 @@ const programs = [
     title: "Core Infrastructure Network Professional",
     desc: "Install, manage, configure, automate and secure core networks infrastructure. CCNP Enterprise preparation with advanced routing, SD-WAN, and automation.",
     duration: "8 Months", modules: "5 Modules", certs: "CCNP Enterprise",
-    tags: ["CCNA 200-301", "Windows Server", "ENCOR 350-401", "ENARSI 300-410", "Linux Admin"],
+    tags: ["CCNA 200-301", "ENCOR 350-401", "ENARSI 300-410",],
     price: "₦2,500,000", priceSub: "Modules 1-5 · Optional modules available",
     btnColor: "#20B2AA",
   },
@@ -64,6 +64,17 @@ const programs = [
     price: "₦2,000,000", priceSub: "Modules 1-3 · GRC focus",
     btnColor: "#20B2AA",
   },
+  {
+    track: "Track 07 · Advanced Blue Team", icon: "🛡️", accentColor: "#20B2AA",
+    title: "Cybersecurity SOC | Defender | Blue Team | Forensic Analyst",
+    desc: "Analyse, Protect and Defend internet-connected devices and services from malicious attacks by CYBERCRIMINALS.",
+    duration: "8 Months", modules: "Modules 1–4", certs: "Blue Team Defender · SOC · Forensic",
+    tags: ["SOC Defender", "Continuous Monitoring", "Incident Response", "Active Defense"],
+    price: "₦3,000,000", priceSub: "Training Fee covers Module 1 — 4",
+    btnColor: "#20B2AA",
+    extendedDesc: "Security teams failing to adapt to the new realities facing hybridized organizations risk employing outmoded tactics. This course teaches you continuous monitoring, balancing cloud & on-premises security, and advanced defense adaptation to prevent attacks and detect adversaries with actionable techniques.",
+    requirements: "CPU: 64-bit Intel i5/i7 (8th Gen or newer) or AMD equivalent. x64-bit, 2.0+ GHz. Host setup/software configuration done at start at no extra cost."
+  },
 ];
 
 const comparison = [
@@ -73,6 +84,7 @@ const comparison = [
   { name: "Offensive | Red Team | Pen Testing", track: "RED TEAM", trackColor: "bg-neon-red-10", trackText: "text-neon-red", duration: "8 months", certs: "CEH v13 · OSCP · PEN-300", fee: "₦3.0M" },
   { name: "Cloud Security Professional", track: "CLOUD", trackColor: "bg-sea-green-10", trackText: "text-sea-green", duration: "4 months", certs: "Cloud Security Architecture", fee: "₦2.0M" },
   { name: "Cybersecurity Administration Professional", track: "GRC", trackColor: "bg-sea-green-10", trackText: "text-sea-green", duration: "4 months", certs: "ISC² CC · CISA · CISSP", fee: "₦2.0M" },
+  { name: "SOC | Defender | Blue Team | Forensic (T7)", track: "BLUE TEAM", trackColor: "bg-sea-green-10", trackText: "text-sea-green", duration: "8 months", certs: "Modules 1–4 Complete", fee: "₦3.0M" },
 ];
 
 const bootcampFeatures = [
@@ -131,7 +143,7 @@ export default function ProgramsPage() {
         <div className="relative max-w-[800px]">
           <span className="inline-block font-mono text-[10px] uppercase tracking-[2px] text-sea-green border border-sea-green-30 bg-sea-green-5 px-4 py-1.5 rounded-full mb-6">Training Tracks</span>
           <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-white leading-tight mb-4 tracking-tight">
-            6 Career-Defining<br /><span className="text-neon-red">Certification Programs</span>
+            7 Career-Defining<br /><span className="text-neon-red">Certification Programs</span>
           </h1>
           <p className="text-white/70 text-[15px] leading-relaxed max-w-[600px] mb-8">
             From Network Fundamentals to Advanced Red-Team Operations — choose a structured multi-month program designed for real job outcomes. All programs include lab equipment, mentoring, and exam preparation.
@@ -160,7 +172,7 @@ export default function ProgramsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((p) => (
-              <div key={p.title} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+              <div key={p.title + p.track} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
                 <div>
                   <div className="h-1.5" style={{ backgroundColor: p.accentColor }} />
                   <div className="p-6 flex flex-col gap-4">
@@ -171,7 +183,22 @@ export default function ProgramsPage() {
                         <h3 className="font-bold text-[#0d1b2a] text-[14px] leading-snug">{p.title}</h3>
                       </div>
                     </div>
+                    
                     <p className="text-[13px] text-gray-500 leading-relaxed font-sora-custom">{p.desc}</p>
+                    
+                    {p.extendedDesc && (
+                      <p className="text-[12px] text-gray-400 italic leading-relaxed font-sora-custom border-l-2 border-sea-green/30 pl-3 my-1">
+                        {p.extendedDesc}
+                      </p>
+                    )}
+
+                    {p.requirements && (
+                      <div className="bg-gray-50 border border-gray-100/80 rounded-xl p-3 text-[11px] text-gray-500 font-sora-custom leading-normal">
+                        <strong className="text-[#0d1b2a] block mb-0.5">💻 PC Requirements:</strong>
+                        {p.requirements}
+                      </div>
+                    )}
+
                     <div className="flex flex-wrap gap-4 text-[12px] text-gray-400 py-3 border-y border-gray-100 font-sora-custom">
                       <span>⏱ {p.duration}</span>
                       <span>📋 {p.modules}</span>
@@ -220,7 +247,7 @@ export default function ProgramsPage() {
               </thead>
               <tbody>
                 {comparison.map((row, i) => (
-                  <tr key={row.name} className={`border-t border-gray-100 hover:bg-sea-green-5 cursor-pointer transition-colors duration-300 font-sora-custom ${i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}`}>
+                  <tr key={row.name + i} className={`border-t border-gray-100 hover:bg-sea-green-5 cursor-pointer transition-colors duration-300 font-sora-custom ${i % 2 === 0 ? "bg-white" : "bg-[#fafafa]"}`}>
                     <td className="px-4 py-4.5 font-bold text-[#0d1b2a] text-[13px]">{row.name}</td>
                     <td className="px-4 py-4.5">
                       <span className={`font-mono text-[9px] font-bold px-2.5 py-1 rounded ${row.trackColor} ${row.trackText}`}>{row.track}</span>

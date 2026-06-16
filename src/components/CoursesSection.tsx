@@ -28,6 +28,30 @@ const courses = [
   { id: "soc", cat: "info-sec jobrole", level: "Cybersecurity", levelColor: "bg-[#FF073A] text-white", duration: "80+ hrs", code: "Career Track", title: "Cyber Security Analyst | SOC | Defender | Blue Team | Forensic Analyst", desc: "Comprehensive SOC analyst career track. Analyze, protect and defend against cybercriminal attacks.", tags: ["SIEM", "Threat Intel", "DFIR", "Blue Team"], price: "₦500,000", priceSub: "2 months · Bootcamp & Self-Paced", img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=75" },
   { id: "pentest", cat: "info-sec jobrole", level: "Cybersecurity", levelColor: "bg-[#FF073A] text-white", duration: "70+ hrs", code: "Career Track", title: "Cybersecurity Offensive | Penetration Testing | Red Team Professional", desc: "Master ethical hacking, penetration testing and red team operations against real-world infrastructure.", tags: ["Pen Testing", "Red Team", "Exploit Dev", "Reporting"], price: "₦1,000,000", priceSub: "2 months · Bootcamp & Self-Paced", img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=75" },
   { id: "linux", cat: "jobrole", level: "Server Mgmt", levelColor: "bg-[#20B2AA] text-white", duration: "50+ hrs · 20 Labs", code: "Certification: LPIC-1", title: "Linux Fundamentals & Administration (LPIC-1)", desc: "Command-line mastery, Linux installation, configuration, maintenance tasks and scripting fundamentals.", tags: ["CLI Mastery", "Shell Script", "File Systems", "Networking"], price: "₦300,000", priceSub: "2 months · Bootcamp & Self-Paced", img: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&q=75" },
+  
+  // Track 01 to 07 under 'jobrole' (Special Job Role)
+  { id: "track1", cat: "networking jobrole", level: "Career Track", levelColor: "bg-[#20B2AA] text-white", duration: "6 Months", code: "Track 01", title: "Computer Networking & Server Administration", desc: "Install, manage, configure and secure computer & server networks. Ideal for those entering IT infrastructure, network administration, or systems management roles.", tags: ["CCNA 200-301", "Windows Server", "LPIC-1 Linux"], price: "₦1,500,000", priceSub: "All 3 modules · Lab access included", img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=75" },
+  { id: "track2", cat: "core-net jobrole", level: "Career Track", levelColor: "bg-[#20B2AA] text-white", duration: "8 Months", code: "Track 02", title: "Core Infrastructure Network Professional", desc: "Install, manage, configure, automate and secure core networks infrastructure. CCNP Enterprise preparation with advanced routing, SD-WAN, and automation.", tags: ["CCNA", "ENCOR 350-401", "ENARSI 300-410"], price: "₦2,500,000", priceSub: "Modules 1-5 · Lab access included", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75" },
+  { id: "track3", cat: "info-sec jobrole", level: "Career Track", levelColor: "bg-[#20B2AA] text-white", duration: "8 Months", code: "Track 03", title: "Cybersecurity SOC | Defender | Blue Team | Forensic Analyst", desc: "Analyse, protect and defend internet-connected devices from malicious attacks. Master SIEM, threat detection, incident response, and digital forensics.", tags: ["Security+", "CySA+", "ECSA", "CNDv3", "SIEM"], price: "₦3,000,000", priceSub: "Modules 1-4 + chosen electives", img: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=600&q=75" },
+  { id: "track4", cat: "info-sec jobrole", level: "Career Track", levelColor: "bg-[#FF073A] text-white", duration: "8 Months", code: "Track 04", title: "Cybersecurity Offensive | Red Team | Penetration Testing", desc: "Proactively find and exploit vulnerabilities through penetration testing, red teaming, and ethical hacking. CEH, OSCP, and advanced evasion techniques.", tags: ["CEH v13", "OSCP", "PEN-300", "Red Team"], price: "₦3,000,000", priceSub: "Modules 1-4 · Advanced labs", img: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&q=75" },
+  { id: "track5", cat: "infra-sec jobrole", level: "Career Track", levelColor: "bg-[#20B2AA] text-white", duration: "4 Months", code: "Track 05", title: "Cybersecurity Cloud Security Professional", desc: "Consolidate protection of cloud-based networks for streamlined, continuous monitoring. AWS, Azure, and cloud security architecture from ground up.", tags: ["Intro to Networks", "Security Essentials", "Cloud Security"], price: "₦2,000,000", priceSub: "Modules 1-3 · Cloud lab environment", img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=75" },
+  { id: "track6", cat: "info-sec jobrole", level: "Career Track", levelColor: "bg-[#20B2AA] text-white", duration: "4 Months", code: "Track 06", title: "Cybersecurity Administration Professional", desc: "Cover all digital security needs — Governance, Risk and Compliance. CISSP, CISA, and ISC² CC for leadership-level cybersecurity professionals.", tags: ["ISC² CC", "CISA", "CISSP", "GRC"], price: "₦2,000,000", priceSub: "Modules 1-3 · GRC focus", img: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=75" },
+  { 
+    id: "track7", 
+    cat: "info-sec jobrole", 
+    level: "Career Track", 
+    levelColor: "bg-[#20B2AA] text-white", 
+    duration: "8 Months", 
+    code: "Track 07", 
+    title: "Cybersecurity SOC | Defender | Blue Team | Forensic Analyst", 
+    desc: "Analyse, Protect and Defend internet-connected devices and services from malicious attacks by CYBERCRIMINALS.", 
+    tags: ["SOC Defender", "Continuous Monitoring", "Incident Response", "Active Defense"], 
+    price: "₦3,000,000", 
+    priceSub: "Training Fee covers Module 1 — 4", 
+    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=600&q=75",
+    extendedDesc: "Security teams failing to adapt to the new realities facing hybridized organizations risk employing outmoded tactics. This course teaches you continuous monitoring, balancing cloud & on-premises security, and advanced defense adaptation to prevent attacks and detect adversaries with actionable techniques.",
+    requirements: "CPU: 64-bit Intel i5/i7 (8th Gen or newer) or AMD equivalent. x64-bit, 2.0+ GHz. Host setup/software configuration done at start at no extra cost."
+  },
 ];
 
 export default function CoursesSection() {
@@ -95,6 +119,20 @@ export default function CoursesSection() {
                   <p className="font-mono text-[10px] text-[#FF073A] uppercase tracking-[1px] font-bold mb-2">{course.code}</p>
                   <h3 className="font-bold text-[#0d1b2a] text-[15px] leading-snug mb-3">{course.title}</h3>
                   <p className="text-[13px] text-gray-500 leading-relaxed mb-4">{course.desc}</p>
+                  
+                  {course.extendedDesc && (
+                    <p className="text-[12.5px] text-gray-400 italic leading-relaxed mb-4 border-l-2 border-[#20B2AA]/30 pl-3">
+                      {course.extendedDesc}
+                    </p>
+                  )}
+
+                  {course.requirements && (
+                    <div className="bg-gray-50 border border-gray-100 rounded-xl p-3 text-[11px] text-gray-500 mb-4 leading-normal font-sans">
+                      <strong className="text-[#0d1b2a] block mb-0.5">💻 PC Requirements:</strong>
+                      {course.requirements}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap gap-2">
                     {course.tags.map((tag) => (
                       <span key={tag} className="font-mono text-[9px] font-semibold bg-[#20B2AA]/10 text-[#20B2AA] px-2.5 py-1 rounded border border-[#20B2AA]/20">{tag}</span>

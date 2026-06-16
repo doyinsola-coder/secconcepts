@@ -116,23 +116,12 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[960px] mx-auto flex flex-col items-center w-full">
+      <div className="relative z-10 max-w-[1200px] mx-auto flex flex-col items-center w-full">
         <p className="font-mono text-[9px] tracking-[3px] uppercase text-sea-green mb-8">
           — Cisco Authorized Training Partner · Ilorin, Nigeria —
         </p>
 
-        <h1 className="text-center text-[clamp(1.8rem,5vw,4.2rem)] text-white font-semibold leading-[1.15] tracking-tight max-w-[850px] mb-6">
-          Enterprise Core<br className="hidden sm:block" />{" "}
-          <span className="text-sea-green font-sora-custom">Networking</span>,<br className="hidden sm:block" />{" "}
-          Cybersecurity Training &<br className="hidden sm:block" />{" "}
-          <span className="text-neon-red font-sora-custom">Solution</span> Company.
-        </h1>
-
-        <p className="text-[clamp(.85rem,1.2vw,1.1rem)] text-white/70 max-w-[650px] mb-10 leading-relaxed px-4 sm:px-0">
-          We are a team of talented professionals with a lot of expertise in networking and security solutions.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-2.5 mb-10 px-4 sm:px-0">
+        <div className="flex flex-wrap justify-center gap-2.5 mb-8 px-4 sm:px-0">
           {pills.map((pill) => (
             <span key={pill} className="font-mono text-[10px] tracking-[1.2px] uppercase px-4 py-2 rounded-full border border-sea-green/30 text-sea-green bg-sea-green/10">
               {pill}
@@ -140,12 +129,21 @@ export default function Hero() {
           ))}
         </div>
 
+        <h1 className="text-center text-[clamp(1.8rem,4vw,3.5rem)] text-white font-extrabold leading-[1.15] tracking-tight max-w-[1100px] mb-8">
+          Enterprise Core <span className="text-sea-green font-sora-custom">Networking</span><br className="hidden sm:inline" />
+          Cybersecurity Training & <span className="text-neon-red font-sora-custom">Solution</span> Company.
+        </h1>
+
+        <p className="text-[clamp(.85rem,1.2vw,1.1rem)] text-white/70 max-w-[650px] mb-10 leading-relaxed px-4 sm:px-0">
+          We are a team of talented professionals with a lot of expertise in networking and security solutions.
+        </p>
+
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
           <Link
             href="/about"
             className="w-full sm:w-auto sm:min-w-[210px] text-center bg-sea-green bg-sea-green-hover text-white font-bold text-[14px] px-8 py-4 rounded-lg shadow-[0_4px_20px_rgba(32,178,170,0.3)] hover:-translate-y-0.5 hover:shadow-[0_4px_25px_rgba(32,178,170,0.5)] transition-all duration-300 font-sora-custom"
           >
-            Learn More About Sec-Concepts
+            Learn More About Sec-Concepts Networks
           </Link>
           <Link
             href="/programs"
