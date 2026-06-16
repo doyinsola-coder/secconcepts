@@ -14,6 +14,8 @@ const values = [
   { title: "Empowerment", desc: "We equip individuals and organizations with skills and tools for lasting success in the ever-evolving ICT landscape.", color: "#FF073A", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=75" },
   { title: "Excellence", desc: "We strive for the highest standards in training quality, customer service, and student outcomes — evidenced by our 96% first-attempt pass rate.", color: "#20B2AA", img: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=75" },
   { title: "Adaptability", desc: "Flexible, practical solutions tailored to the evolving needs of the IT industry. Weekend, weekday, online, and in-person options.", color: "#20B2AA", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=75" },
+  {title: "Our Vision", desc: "To afford individuals, firms with PRACTICAL and FLEXIBLE ICT Networking, Security, Web Solutions and Training.", color: "#FF073A", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=75" }, 
+  {title: "Our Mission", desc: "To empower individuals and organizations with capacity-building tools designed to significantly solve challenges faced in the IT sector.", color: "#20B2AA", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=75"   }
 ];
 
 const team = [
@@ -186,20 +188,6 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-20 px-[5%] bg-[#f9fafb] text-center">
-        <div className="max-w-[900px] mx-auto">
-          <span className="inline-block font-mono text-[10px] uppercase tracking-[2px] text-sea-green border border-sea-green-30 bg-sea-green-5 px-4 py-1.5 rounded-full mb-6 font-sora-custom">Certification Partners</span>
-          <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold mb-8 tracking-tight">Globally Recognized Certifications</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {certifications.map((c) => (
-              <span key={c} className="text-[12px] font-mono text-black border border-sea-green-30 bg-white px-4 py-2.5 rounded-lg hover:bg-sea-green-10 transition duration-300 cursor-default">{c}</span>
-            ))}
-          </div>
-          <p className="font-mono text-[10px] text-gray-400 mt-8 tracking-wide">Cisco Networking Academy Authorized Training Partner · EC-Council Accredited Training Center · Ilorin, Nigeria · RC1270765</p>
         </div>
       </section>
 

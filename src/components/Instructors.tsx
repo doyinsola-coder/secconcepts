@@ -9,26 +9,26 @@ const sora = Sora({
 
 const instructors = [
   {
-    name: "Adebayo Okafor",
-    role: "Lead Instructor · Enterprise Networks",
-    bio: "Senior Network Architect with 14 years designing enterprise networks across telecoms and banking in Nigeria and West Africa.",
-    certs: ["CCIE ENT #58421", "CCNP Enterprise", "Cisco ATP"],
-    initials: "AO",
-  },
-  {
-    name: "Ngozi Eze",
-    role: "Cybersecurity Instructor · Red & Blue Team",
-    bio: "Active security engineer specialising in SOC operations, incident response, and penetration testing for financial institutions.",
-    certs: ["CISSP", "CEH", "CompTIA CySA+"],
-    initials: "NE",
+    name: "Aliyu Azeez Omotayo",
+    role: "CEO & Principal Consultant",
+    subtitle: "CCIE R&S · MCSE · 150+ CERTIFICATIONS",
+    bio: "25+ years in networking and security across Nigeria, South Africa, France, and the USA. Degrees in Mathematics and Information Networks from the USA. Member of CPN and Accredited Management Trainer (CMD).",
+    initials: "AAO",
     highlight: true,
   },
   {
-    name: "Emeka Nwosu",
-    role: "Cloud & Security Instructor",
-    bio: "Cloud architect and security specialist with certifications across AWS, Azure, and Cisco security platforms.",
-    certs: ["CCNP Security", "AWS Security", "Azure Administrator"],
-    initials: "EN",
+    name: "Ogundeji Olubukunmi",
+    role: "Chief Operating Officer",
+    subtitle: "CCNP · CISCO ASA · FIREPOWER",
+    bio: "Expert in designing and securing enterprise network infrastructures. Proficient in Cisco ASA, Firepower, Catalyst switches, ISR routers, VPNs, and cloud integration across AWS and Azure.",
+    initials: "OOB",
+  },
+  {
+    name: "Akinyemi Adebayo",
+    role: "Chief Technical Officer",
+    subtitle: "CCNP · MENG ELECTRICAL ENGINEERING",
+    bio: "Telecom engineer with 20+ years in designing, installing, and maintaining telecommunication and computer networks. Involved in National and World Bank-assisted projects as System Integrator and Project Manager.",
+    initials: "AA",
   },
 ];
 
@@ -45,41 +45,33 @@ export default function Instructors() {
           <span className="text-[#20B2AA]">Work Every Day</span>
         </h2>
         <p className="text-white/60 text-[1.05rem] max-w-[600px] leading-[1.7] mb-12">
-          Not academics. Not retired engineers. Active practitioners who configure Cisco gear, respond to incidents, and design networks for enterprise clients every week.
+          Experienced and well-trained professionals ready to handle your challenges.
         </p>
 
         <div className="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-8">
           {instructors.map((inst) => (
             <div
               key={inst.name}
-              className={`p-8 bg-[#0d0d0f] rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] ${
+              className={`p-8 bg-[#0d0d0f] rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between ${
                 inst.highlight
                   ? "border-2 border-[#20B2AA] shadow-[0_4px_25px_rgba(32,178,170,0.15)]"
                   : "border border-white/5"
               }`}
             >
-              {/* Initials Circle */}
-              <div className="w-14 h-14 rounded-full bg-[#20B2AA] flex items-center justify-center text-lg font-extrabold text-white mb-6 shadow-[0_4px_12px_rgba(32,178,170,0.3)]">
-                {inst.initials}
-              </div>
+              <div>
+                {/* Initials Circle */}
+                <div className="w-16 h-16 rounded-full bg-[#20B2AA] flex items-center justify-center text-lg font-extrabold text-white mb-6 mx-auto shadow-[0_4px_12px_rgba(32,178,170,0.3)]">
+                  {inst.initials}
+                </div>
 
-              {/* Info Block */}
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold font-mono tracking-widest text-[#FF073A] uppercase mb-2">
-                  Instructor
-                </span>
-                <h3 className="font-extrabold text-white text-lg mb-1">{inst.name}</h3>
-                <p className="text-[12px] text-[#20B2AA] font-semibold mb-4">{inst.role}</p>
-                <p className="text-[13px] text-white/70 leading-relaxed mb-5">{inst.bio}</p>
-                <div className="flex flex-wrap gap-2">
-                  {inst.certs.map((cert) => (
-                    <span
-                      key={cert}
-                      className="font-mono text-[9px] font-semibold bg-[#20B2AA]/5 text-[#20B2AA] px-2.5 py-1.5 rounded border border-[#20B2AA]/20"
-                    >
-                      {cert}
-                    </span>
-                  ))}
+                {/* Info Block */}
+                <div className="flex flex-col items-start">
+                  <span className="text-[9px] font-bold font-mono tracking-wider bg-[#20B2AA] text-white px-2.5 py-1 rounded mb-4 uppercase">
+                    {inst.role}
+                  </span>
+                  <h3 className="font-extrabold text-white text-lg mb-1">{inst.name}</h3>
+                  <p className="text-[10px] text-[#20B2AA] font-bold tracking-wider uppercase mb-4">{inst.subtitle}</p>
+                  <p className="text-[13px] text-white/70 leading-relaxed mb-2">{inst.bio}</p>
                 </div>
               </div>
             </div>
