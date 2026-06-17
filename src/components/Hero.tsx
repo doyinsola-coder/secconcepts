@@ -13,8 +13,6 @@ const slides = [
   { src: "https://res.cloudinary.com/decgjhtlb/image/upload/v1781114020/WhatsApp_Image_2026-06-10_at_10.45.38_AM_ndhqwi.jpg", caption: "Linux & Server Administration" },
 ];
 
-const pills = ["CCNA & CCNP", "Cybersecurity", "Penetration Testing", "Cloud Security", "Server Administration"];
-
 const stats = [
   { value: "150+", label: "Certifications Offered" },
   { value: "96%", label: "Exam Pass Rate" },
@@ -120,19 +118,10 @@ export default function Hero() {
         <p className="font-mono text-[9px] tracking-[3px] uppercase text-sea-green mb-8">
           — Cisco Authorized Training Partner · Ilorin, Nigeria —
         </p>
-
-        <div className="flex flex-wrap justify-center gap-2.5 mb-8 px-4 sm:px-0">
-          {pills.map((pill) => (
-            <span key={pill} className="font-mono text-[10px] tracking-[1.2px] uppercase px-4 py-2 rounded-full border border-sea-green/30 text-sea-green bg-sea-green/10">
-              {pill}
-            </span>
-          ))}
-        </div>
-
-        <h1 className="text-center text-[clamp(1.8rem,4vw,3.5rem)] text-white font-extrabold leading-[1.15] tracking-tight max-w-[1100px] mb-8">
-          Enterprise Core <span className="text-sea-green font-sora-custom">Networking</span><br className="hidden sm:inline" />
-          Cybersecurity Training & <span className="text-neon-red font-sora-custom">Solution</span> Company.
-        </h1>
+<h1 className="text-center text-[2rem] lg:text-[2.8rem] text-white font-extrabold leading-[1.2] tracking-tight mb-8">
+  <div>Enterprise <span className="text-sea-green">Networking</span> & Cybersecurity</div>
+  <div>Training & <span className="text-neon-red">Solution</span> Company.</div>
+</h1>
 
         <p className="text-[clamp(.85rem,1.2vw,1.1rem)] text-white/70 max-w-[650px] mb-10 leading-relaxed px-4 sm:px-0">
           We are a team of talented professionals with a lot of expertise in networking and security solutions.
