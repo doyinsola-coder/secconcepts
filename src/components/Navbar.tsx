@@ -93,11 +93,14 @@ export default function Navbar() {
           ))}
           <li>
             <Link
-              href="/contact"
-              className="bg-neon-red bg-neon-red-hover text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,7,58,0.4)] whitespace-nowrap font-sora-custom"
-            >
-              Enroll Now →
-            </Link>
+  href="https://wa.me/2348039134906"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setOpen(false)}
+  className="mt-4 inline-flex w-full justify-center bg-neon-red bg-neon-red-hover text-white text-sm font-bold px-5 py-3 rounded-lg no-underline hover:shadow-[0_0_15px_rgba(255,7,58,0.4)] transition-all duration-300 font-sora-custom"
+>
+  Enroll Now →
+</Link>
           </li>
         </ul>
 
@@ -142,12 +145,14 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-4 inline-flex w-full justify-center bg-neon-red bg-neon-red-hover text-white text-sm font-bold px-5 py-3 rounded-lg no-underline hover:shadow-[0_0_15px_rgba(255,7,58,0.4)] transition-all duration-300 font-sora-custom"
-          >
-            Enroll Now →
-          </Link>
+  href="https://wa.me/2348039134906"
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => setOpen(false)}
+  className="mt-4 inline-flex w-full justify-center bg-neon-red bg-neon-red-hover text-white text-sm font-bold px-5 py-3 rounded-lg no-underline hover:shadow-[0_0_15px_rgba(255,7,58,0.4)] transition-all duration-300 font-sora-custom"
+>
+  Enroll Now →
+</Link>
         </div>
       )}
     </>
