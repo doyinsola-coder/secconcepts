@@ -68,9 +68,9 @@ export default function Navbar() {
             <p className="truncate text-base font-extrabold text-white md:text-2xl font-sora-custom">
               Sec Concept <span className="text-white">Networks</span>
             </p>
-            <p className="truncate text-[10px] text-sea-green font-bold tracking-wider mt-0.5 md:text-sm uppercase font-sora-custom">
-              Networking · Cybersecurity · Cloud
-            </p>
+            <p className="truncate text-[8px] text-sea-green font-bold tracking-widest mt-0.5 uppercase font-sora-custom">
+  Networking · Cybersecurity · Cloud
+</p>
           </div>
         </Link>
 
