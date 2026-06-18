@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Sora } from "next/font/google";
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function CTABand() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            href="/enroll"
+            href={WHATSAPP_ENROLL_URL}
+target="_blank"
+rel="noopener noreferrer"
             className="bg-[#FF073A] text-white font-bold text-[14px] px-8 py-4 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300"
           >
             &rarr; Enroll Now — July 2026 Cohort

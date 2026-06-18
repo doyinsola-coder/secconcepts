@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts";
 const stats = [
   { n: "40+", label: "Courses" },
   { n: "96%", label: "Pass Rate" },
@@ -196,7 +196,9 @@ export default function AboutPage() {
         <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-white mb-4 tracking-tight">Take the Next Step in Your ICT Career Today</h2>
         <p className="text-white/80 text-[15px] max-w-[500px] mx-auto mb-8 leading-relaxed font-sora-custom">Join 2,400+ certified professionals who trained with Sec Concept Networks. Expert-led, hands-on, and aligned to the latest Cisco, CompTIA, and EC-Council exam blueprints.</p>
         <div className="flex flex-wrap justify-center gap-4 font-sora-custom">
-          <Link href="/enroll" className="bg-white text-neon-red font-bold px-6 py-4 rounded-lg hover:bg-white/95 transition-colors shadow-lg">
+          <Link href={WHATSAPP_ENROLL_URL}
+target="_blank"
+rel="noopener noreferrer" className="bg-white text-neon-red font-bold px-6 py-4 rounded-lg hover:bg-white/95 transition-colors shadow-lg">
             Enroll Now — July 2026 Cohort
           </Link>
           <Link href="/#courses" className="bg-transparent border border-white text-white font-bold px-6 py-4 rounded-lg hover:bg-white/10 transition-colors">

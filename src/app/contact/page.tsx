@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Globe, Clock, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { Variants } from "framer-motion";
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -303,7 +304,9 @@ export default function ContactPage() {
           <motion.h2 variants={fadeUp} className="text-2xl md:text-4xl font-extrabold tracking-tight">Take the next step in your ICT career</motion.h2>
           <motion.p variants={fadeUp} className="text-sm md:text-base text-white/95 max-w-2xl mx-auto font-sora-custom leading-relaxed">Join 2,400+ certified professionals. Expert-led, hands-on training aligned to Cisco, CompTIA, and EC-Council exam blueprints.</motion.p>
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 justify-center pt-4 font-sora-custom">
-            <Link href="/enroll" className="bg-neon-red bg-neon-red-hover text-white font-bold px-7 py-3 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300">Enroll Now</Link>
+            <Link href={WHATSAPP_ENROLL_URL}
+target="_blank"
+rel="noopener noreferrer" className="bg-neon-red bg-neon-red-hover text-white font-bold px-7 py-3 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300">Enroll Now</Link>
             <Link href="/#courses" className="inline-flex items-center gap-2 justify-center py-2.5 px-5 border border-white/30 rounded-lg text-sm font-bold text-white hover:bg-white/10 transition">View Courses</Link>
           </motion.div>
         </motion.div>

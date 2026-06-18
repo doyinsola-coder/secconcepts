@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts";
 const programs = [
   { icon: "🌐", title: "Computer Networking & Server Administration", desc: "Install, Manage, Configure, and Secure Computer & Server Networks.", duration: "6 Months", price: "₦1,500,000", color: "#20B2AA", tags: ["CCNA 200-301", "Windows Server", "LPIC-1 Linux"] },
   { icon: "🏗️", title: "Core Infrastructure Network Professional", desc: "Install, Manage, Configure, Automate and Secure Core Networks Infrastructure.", duration: "8 Months", price: "₦2,500,000", color: "#1a56db", tags: ["CCNA", "ENCOR", "ENARSI", "Windows Server", "Linux"] },
@@ -140,7 +140,9 @@ export default function CoursesPage() {
             Every course is mapped to official exam blueprints from Cisco, CompTIA, EC-Council, ISC², ISACA, and OffSec. Bootcamp and self-paced options available for all courses.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="bg-[#FF073A] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#cc0530] transition">Enroll Now →</Link>
+            <Link href="https://wa.me/2348039134906?text=Hello%2C%20I'm%20interested%20in%20enrolling%20in%20one%20of%20your%20programs."
+target="_blank"
+rel="noopener noreferrer" className="bg-[#FF073A] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#cc0530] transition">Enroll Now →</Link>
             <Link href="/programs" className="bg-white/10 border border-white/20 text-white font-bold px-6 py-3 rounded-lg hover:bg-white/20 transition">View Programs</Link>
           </div>
         </div>
@@ -168,7 +170,9 @@ export default function CoursesPage() {
                       <div className="font-extrabold text-[#0a1628] text-[17px]">{p.price}</div>
                       <div className="font-mono text-[10px] text-[#9ca3af]">{p.duration}</div>
                     </div>
-                    <Link href="/contact" className="text-white text-[12px] font-bold px-4 py-2 rounded-lg hover:opacity-90 transition" style={{ background: p.color }}>Enroll →</Link>
+                    <Link href="https://wa.me/2348039134906?text=Hello%2C%20I'm%20interested%20in%20enrolling%20in%20one%20of%20your%20programs."
+target="_blank"
+rel="noopener noreferrer" className="text-white text-[12px] font-bold px-4 py-2 rounded-lg hover:opacity-90 transition" style={{ background: p.color }}>Enroll →</Link>
                   </div>
                 </div>
               </div>
@@ -199,7 +203,9 @@ export default function CoursesPage() {
                         <div className="font-bold text-[#0a1628] text-[14px]">{c.price}</div>
                         <div className="font-mono text-[10px] text-[#9ca3af]">{c.duration}</div>
                       </div>
-                      <Link href="/contact" className="bg-[#20B2AA] text-white text-[11px] font-bold px-3 py-1.5 rounded-lg hover:bg-[#178a84] transition">Enroll</Link>
+                      <Link href={WHATSAPP_ENROLL_URL}
+target="_blank"
+rel="noopener noreferrer" className="bg-[#20B2AA] text-white text-[11px] font-bold px-3 py-1.5 rounded-lg hover:bg-[#178a84] transition">Enroll</Link>
                     </div>
                   </div>
                 ))}
@@ -214,7 +220,9 @@ export default function CoursesPage() {
         <h2 className="text-[clamp(1.8rem,3vw,2.5rem)] font-extrabold text-white mb-3">Not Sure Which Course to Pick?</h2>
         <p className="text-white/80 text-[15px] max-w-[500px] mx-auto mb-8">Talk to our team for a free career roadmap consultation. We'll match you to the right program for your goals.</p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Link href="/contact" className="bg-white text-[#FF073A] font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition">Speak to an Advisor →</Link>
+          <Link href="https://wa.me/2348039134906?text=Hello%2C%20I'm%20interested%20in%20enrolling%20in%20one%20of%20your%20programs."
+target="_blank"
+rel="noopener noreferrer"className="bg-white text-[#FF073A] font-bold px-6 py-3 rounded-lg hover:bg-white/90 transition">Speak to an Advisor →</Link>
           <Link href="/programs" className="bg-white/15 border border-white/20 text-white font-bold px-6 py-3 rounded-lg hover:bg-white/25 transition">View Programs</Link>
         </div>
       </section>

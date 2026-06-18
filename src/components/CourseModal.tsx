@@ -1,7 +1,7 @@
 "use client";
 
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts"
 import { useEffect } from "react";
-
 type Course = {
   id: string;
   title: string;
@@ -306,8 +306,10 @@ export default function CourseModal({
               </div>
             </div>
             <a
-              href="/enroll"
-              className="bg-[#0e7c5a] text-white font-bold text-[13px] px-5 py-2.5 rounded-lg hover:bg-[#095e42] transition-colors"
+              href={WHATSAPP_ENROLL_URL}
+              target="_blank"
+                rel="noopener noreferrer"
+              className="bg-neon-red bg-neon-red-hover text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,7,58,0.4)] whitespace-nowrap font-sora-custom"
             >
               Enroll Now →
             </a>

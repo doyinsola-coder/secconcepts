@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import { WHATSAPP_ENROLL_URL } from "@/constants/contacts";
 const stats = [
   { n: "7", label: "Programs Available" },
   { n: "4–8", label: "Months Duration", accent: true },
@@ -148,10 +148,23 @@ export default function ProgramsPage() {
           <p className="text-white/70 text-[15px] leading-relaxed max-w-[600px] mb-8">
             From Network Fundamentals to Advanced Red-Team Operations — choose a structured multi-month program designed for real job outcomes. All programs include lab equipment, mentoring, and exam preparation.
           </p>
-          <div className="flex flex-wrap gap-4 mb-12 font-sora-custom">
-            <Link href="/contact" className="bg-neon-red bg-neon-red-hover text-white font-bold px-6 py-4 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300">Enroll in a Program →</Link>
-            <a href="#compare" className="bg-white text-black font-bold px-6 py-4 rounded-lg hover:bg-white/90 transition-all duration-300">Compare Programs ↓</a>
-          </div>
+    <div className="flex flex-wrap gap-4 mb-12 font-sora-custom">
+  <Link
+    href="https://wa.me/2348039134906?text=Hello%2C%20I'm%20interested%20in%20enrolling%20in%20one%20of%20your%20programs."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-neon-red bg-neon-red-hover text-white font-bold px-6 py-4 rounded-lg shadow-[0_4px_20px_rgba(255,7,58,0.25)] hover:shadow-[0_4px_25px_rgba(255,7,58,0.4)] hover:-translate-y-0.5 transition-all duration-300"
+  >
+    Enroll in a Program →
+  </Link>
+
+  <a
+    href="#compare"
+    className="bg-white text-black font-bold px-6 py-4 rounded-lg hover:bg-white/90 transition-all duration-300"
+  >
+    Compare Programs ↓
+  </a>
+</div>
           <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
             {stats.map((s) => (
               <div key={s.label}>
