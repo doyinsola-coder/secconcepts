@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Courses", href: "/#courses", scrollTo: "courses" },
+  { label: "Courses", href: "/courses" },
   { label: "Programs", href: "/programs" },
   { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/about#team" },
